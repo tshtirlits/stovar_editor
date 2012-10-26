@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 1400
-  Top = 68
+  Left = 246
+  Top = 176
   Width = 899
   Height = 687
   Caption = 'Form1'
@@ -51,14 +51,17 @@ object Form1: TForm1
     Height = 25
     Caption = 'Button2'
     TabOrder = 3
+    OnClick = Button2Click
   end
   object MaskEdit1: TMaskEdit
     Left = 24
     Top = 544
-    Width = 121
+    Width = 118
     Height = 21
+    EditMask = '000000;1;_'
+    MaxLength = 6
     TabOrder = 4
-    Text = 'ID'#1050#1086#1076' '#1090#1086#1074#1072#1088#1072
+    Text = '      '
   end
   object MaskEdit2: TMaskEdit
     Left = 176
@@ -84,7 +87,7 @@ object Form1: TForm1
     Active = True
     DatabaseName = 'local'
     SQL.Strings = (
-      'select id,name,idgroup from mcc.stovar;')
+      'select id,name,idgroup from mcc.stovar order by id;')
     Left = 320
     Top = 512
   end
@@ -109,5 +112,14 @@ object Form1: TForm1
         Caption = 'About'
       end
     end
+  end
+  object UpdateSQL1: TUpdateSQL
+    Left = 408
+    Top = 512
+  end
+  object Query2: TQuery
+    DatabaseName = 'local'
+    Left = 448
+    Top = 512
   end
 end

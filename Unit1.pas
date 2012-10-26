@@ -23,8 +23,11 @@ type
     Help1: TMenuItem;
     About1: TMenuItem;
     exit1: TMenuItem;
+    UpdateSQL1: TUpdateSQL;
+    Query2: TQuery;
     procedure Button1Click(Sender: TObject);
     procedure exit1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   
   private
     { Private declarations }
@@ -49,6 +52,16 @@ end;
 procedure TForm1.exit1Click(Sender: TObject);
 begin
 Form1.close;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var str: string;
+begin
+Query1.Close;
+Query2.Close;
+Query2.SQL.Clear;
+//Query2.SQL.Add('insert into mcc.stovar id,name,cena,edizm,code,beginprice,idgroup,packet,initpacket values ');
+str:=
 end;
 
 end.
